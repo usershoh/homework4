@@ -1,4 +1,245 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700&display=swap");
+.header {
+  background-image: url(../../img/header_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  background-color: transparent;
+  padding: 30px 0;
+}
+.navbar_top button {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 16px;
+}
+
+.navbar_showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 0;
+}
+.navbar_showcase_text {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 50%;
+}
+.navbar_showcase_text h1 {
+  font-size: 50px;
+  color: #fff;
+}
+.navbar_showcase_text p {
+  font-size: 15px;
+  color: #fff;
+  line-height: 220%;
+}
+.navbar_showcase_text_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.navbar_showcase_text_btn button {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  background-color: #fff;
+  color: #0F2137;
+  font-size: 16px;
+}
+.navbar_showcase_text_btn h2 {
+  font-size: 14px;
+  color: #fff;
+}
+.navbar_showcase_text_btn h2 i {
+  color: #fff;
+  padding-right: 10px;
+  font-size: 25px;
+}
+.navbar_showcase_text_end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.navbar_showcase_text_end img {
+  width: 10%;
+}
+.navbar_showcase_img {
+  width: 30%;
+}
+
+#check {
+  display: none;
+}
+
+.menu {
+  font-size: 20px;
+  color: #fff;
+  display: none;
+}
+
+.closed {
+  color: #fff;
+  font-size: 20px;
+  display: none;
+}
+
+.navbar_top_a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.navbar_top_a a {
+  font-size: 14px;
+  color: #fff;
+}
+.navbar_top_a a i {
+  font-size: 16px;
+  color: #fff;
+  padding-left: 5px;
+}
+
+@media (max-width: 1000px) {
+  .navbar_showcase_img {
+    width: 40%;
+  }
+  .navbar_showcase_text {
+    width: 60%;
+  }
+  .navbar_showcase_text h1 {
+    font-size: 32px;
+  }
+  .navbar_showcase_text p {
+    font-size: 12px;
+  }
+  .navbar_showcase_text_btn button {
+    width: 120px;
+    height: 30px;
+    font-size: 13px;
+  }
+  .navbar_showcase_text_btn h2 {
+    font-size: 12px;
+  }
+  .navbar_showcase_text_btn h2 i {
+    font-size: 20px;
+  }
+  .navbar_showcase_text_end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .navbar_showcase_text_end img {
+    width: 10%;
+  }
+}
+@media (max-width: 800px) {
+  .navbar_top_a {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: #0F2137;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15% 0;
+    transition: right 0.5s;
+  }
+  .navbar_top_a a:nth-of-type(1) {
+    order: 3;
+  }
+  .navbar_top_a a:nth-of-type(2) {
+    order: 1;
+  }
+  .navbar_top_a a:nth-of-type(3) {
+    order: 2;
+  }
+  .navbar_top_a a:nth-of-type(4) {
+    order: 4;
+  }
+  .closed {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #check:checked ~ .navbar_top_a {
+    right: 0;
+  }
+  .menu {
+    display: block;
+    order: 3;
+  }
+  .navbar_top button {
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+    order: 1;
+  }
+  .navbar_top img {
+    order: 2;
+  }
+}
+@media (max-width: 550px) {
+  .navbar_showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .navbar_showcase_text {
+    width: 100%;
+  }
+  .navbar_showcase_img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 360px) {
+  .navbar_showcase_text h1 {
+    font-size: 20px;
+  }
+  .navbar_showcase_text p {
+    font-size: 9px;
+    line-height: 150%;
+  }
+  .navbar_showcase_text_btn button {
+    width: 80px;
+    height: 30px;
+    font-size: 9px;
+  }
+  .navbar_showcase_text_btn h2 {
+    font-size: 12px;
+  }
+  .navbar_showcase_text_btn h2 i {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+  .navbar_top button {
+    width: 80px;
+    height: 30px;
+    font-size: 9px;
+  }
+  .navbar_top img {
+    width: 40%;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +260,7 @@ ul {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
 }
 

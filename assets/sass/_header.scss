@@ -1,0 +1,252 @@
+.header{
+    background-image: url(../../img/header_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.navbar_top{
+    @include flex(center, space-between, 0);
+    background-color: transparent;
+    padding: 30px 0;
+
+    
+
+    button{
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: transparent;
+        color: $color-white;
+        border: 2px solid $color-white;
+        font-size: 16px;
+    }
+}
+.navbar_showcase{
+    @include flex(center, space-between, 20px);
+    padding: 50px 0;
+
+    &_text{
+        @include grid(1fr, 20px);
+        width: 50%;
+
+        h1{
+            font-size: 50px;
+            color: $color-white;
+        }
+        p{
+            font-size: 15px;
+            color: $color-white;
+            line-height: 220%;
+        }
+        &_btn{
+            @include flex(center, flex-start, 15px);
+
+            button{
+                width: 150px;
+                height: 50px;
+                border-radius: 50px;
+                border: none;
+                background-color: $color-white;
+                color: $color-black;
+                font-size: 16px;
+            }
+            h2{
+                font-size: 14px;
+                color: $color-white;
+
+                i{
+                    color: $color-white;
+                    padding-right: 10px;
+                    font-size: 25px;
+                }
+            }
+        }
+        &_end{
+            @include flex(center, flex-start, 10px);
+
+            img{
+                width: 10%;
+            }
+        }
+    }
+    &_img{
+        width: 30%;
+    }
+}
+
+
+#check{
+    display: none;
+}
+.menu{
+    font-size: 20px;
+    color: $color-white;
+    display: none;
+}
+.closed{
+    color: $color-white;
+    font-size: 20px;
+    display: none;
+}
+.navbar_top_a{
+    @include flex(center, flex-start, 25px);
+
+    a{
+        font-size: 14px;
+        color: $color-white;
+        
+        i{
+            font-size: 16px;
+            color: $color-white;
+            padding-left: 5px;
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .navbar_showcase{
+        &_img{
+            width: 40%;
+        }
+        &_text{
+            width: 60%;
+    
+            h1{
+                font-size: 32px;
+            }
+            p{
+                font-size: 12px;
+            }
+            &_btn{
+    
+                button{
+                    width: 120px;
+                    height: 30px;
+                    font-size: 13px;
+                }
+                h2{
+                    font-size: 12px;
+    
+                    i{
+                        font-size: 20px;
+                    }
+                }
+            }
+            &_end{
+                @include flex(center, flex-start, 10px);
+    
+                img{
+                    width: 10%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .navbar_top_a{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 100vh;
+        background-color: $color-black;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15% 0;
+        transition: right 0.5s;
+
+        a:nth-of-type(1){
+            order: 3;
+        }
+        a:nth-of-type(2){
+            order: 1;
+        }
+        a:nth-of-type(3){
+            order: 2;
+        }
+        a:nth-of-type(4){
+            order: 4;
+        }
+    }
+    .closed{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    #check:checked ~ .navbar_top_a{
+        right: 0;
+    }
+    .menu{
+        display: block;
+        order: 3;
+    }
+    .navbar_top{
+        
+        button{
+            width: 120px;
+            height: 40px;
+            font-size: 13px;
+            order: 1;
+        }
+        img{
+            order: 2;
+        }
+    }
+}
+
+@media (max-width: 550px){
+    .navbar_showcase{
+        @include grid(1fr, 30px);
+
+        &_text{
+            width: 100%;
+        }
+        &_img{
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 360px){
+    .navbar_showcase{
+        &_text{
+            h1{
+                font-size: 20px;
+            }
+            p{
+                font-size: 9px;
+                line-height: 150%;
+            }
+            &_btn{
+                button{
+                    width: 80px;
+                    height: 30px;
+                    font-size: 9px;
+                }
+                h2{
+                    font-size: 12px;
+
+                    i{
+                        font-size: 20px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .navbar_top{
+        button{
+            width: 80px;
+            height: 30px;
+            font-size: 9px;
+        }
+        img{
+            width: 40%;
+        }
+    }
+}
