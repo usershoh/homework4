@@ -1,0 +1,95 @@
+.world > div{
+    @include grid(0.7fr 1fr, 30px);
+    align-items: center;
+}
+.world_text{
+    @include grid(1fr, 15px);
+
+    h2{
+        font-size: 16px;
+        color: #244886;
+    }
+    h1{
+        font-size: 30px;
+        color: $color-black;
+    }
+    p{
+        font-size: 16px;
+        color: $color-gray;
+    }
+    button{
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 50px;
+        background-color: #244886;
+        color: $color-white;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1000px){
+    .world > div{
+        @include grid(1fr 1fr, 30px);
+    }
+}
+@media (max-width: 900px){
+    .world_text{
+        h1{
+            font-size: 22px;
+        }
+        p{
+            font-size: 11px;
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            font-size: 10px;
+        }
+    }
+}
+@media (max-width: 600px){
+    .world > div{
+        @include grid(1fr, 30px);
+    }
+    .world_text{
+        @include grid(1fr, 15px);
+    
+        h2{
+            font-size: 16px;
+            color: #244886;
+        }
+        h1{
+            font-size: 30px;
+            color: $color-black;
+        }
+        p{
+            font-size: 16px;
+            color: $color-gray;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            background-color: #244886;
+            color: $color-white;
+            font-size: 15px;
+        }
+    }
+}
+@media (max-width: 360px){
+    .world_text{
+        h1{
+            font-size: 22px;
+        }
+        p{
+            font-size: 11px;
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            font-size: 10px;
+        }
+    }
+}
