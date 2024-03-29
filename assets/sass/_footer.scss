@@ -1,0 +1,46 @@
+.footer > div{
+    border-top: 0.5px solid rgba(128, 128, 128, 0.206);
+    margin-top: 30px;
+    padding-top: 30px;
+    @include grid(1fr 1fr 1fr 1fr, 30px);
+    justify-items: center;
+}
+.footer_card{
+    h2{
+        font-size: 20px;
+        color: $color-black;
+        padding-bottom: 20px;
+    }
+    ul{
+        @include grid(1fr, 10px);
+
+        li a{
+            font-size: 14px;
+            color: $color-gray;
+        }
+    }
+}
+@media (max-width: 900px){
+    .footer > div{
+        @include grid(1fr 1fr 1fr, 30px);
+        justify-items: flex-start;
+    }
+}
+@media (max-width: 650px){
+    .footer > div{
+        @include grid(1fr 1fr, 30px);
+    }
+}
+@media (max-width: 400px){
+    .footer > div{
+        @include grid(1fr, 30px);
+        justify-items: center;
+    }
+    .footer_card{
+        text-align: center;
+
+        ul{
+            text-align: center;
+        }
+    }
+}
